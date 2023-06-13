@@ -67,9 +67,9 @@ def spider(page):
 if __name__ == '__main__':
     wb = openpyxl.Workbook()
     ws = wb.active
-    ws.append(['用户名', '评论标题', '评论时间', '评论内容'])
+    ws.append(['customer_id', 'review_headline', 'review_date', 'review_body'])
     for page in range(1, 28):
-        print(f'正在采集第{page}页')
+        print(f'now collecting{page}page')
         spider(page)
         time.sleep(random.uniform(1, 2))
-    wb.save('亚马逊评论.xlsx')
+    wb.save('watch_reviews.xlsx')
